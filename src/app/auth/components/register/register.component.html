@@ -6,20 +6,23 @@
                 <p class="text-xs-center"><a [routerLink]="['/login']">Have an account?</a></p>
                 backend errors are here
 
-                <form action="">
+                <form [formGroup]="form" (ngSubmit)=onSubmit()>
                     <fieldset>
-                        <fieldset class="form-group"><input type="text" name="" id="" class="form-control form-control-lg" placeholder="Username"></fieldset>
+                        <fieldset class="form-group">
+                            <input formControlName="username" type="text" name="" id="" class="form-control form-control-lg" placeholder="Username" required></fieldset>
                     </fieldset>
 
                     <fieldset>
-                        <fieldset class="form-group"><input type="email" name="" id="" class="form-control form-control-lg"
-                                placeholder="Email"></fieldset>
+                        <fieldset class="form-group">
+                            <input formControlName="email" type="email" name="" id="" class="form-control form-control-lg"
+                                placeholder="Email" required></fieldset>
                     </fieldset>
 
 
                     <fieldset>
-                        <fieldset class="form-group"><input type="password" name="" id="" class="form-control form-control-lg"
-                                placeholder="password"></fieldset>
+                        <fieldset class="form-group">
+                            <input formControlName="password" type="password" name="" id="" class="form-control form-control-lg"
+                                placeholder="password" required></fieldset>
                     </fieldset>
 
                     <button class="btn btn-lg btn-primary pull-xs-right" type="submit">Sign up</button>
